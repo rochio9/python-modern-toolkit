@@ -1,16 +1,17 @@
 # Python Modern Toolkit
 
-Exploración del stack Python 2026: types, async, performance, data engineering moderno, packaging y deploy.
-Combina ejercicios algorítmicos, notas técnicas de investigación y mini-proyectos integradores.
+Exploración del stack Python 2026: type system moderno, async, performance, data engineering con Polars y DuckDB, packaging con uv, observabilidad estructurada y deploy de APIs.
+
+Combina ejercicios algorítmicos breves con notas técnicas de investigación y mini-proyectos integradores.
 
 ## Estructura
 
-- `src/week_01_basics/` — Strings, listas, diccionarios (hash maps).
-- `src/week_02_arrays/` — Two pointers, sliding window, arrays.
-- `src/week_03_search_recursion/` — Búsqueda binaria, recursión, árboles, linked lists.
-- `src/week_04_dp_pandas/` — DP, Pandas, NumPy.
-- `tests/` — Tests con pytest, espejo de la estructura de `src/`.
-- `notes/` — Apuntes técnicos.
+- `src/exercises/` — Ejercicios algorítmicos (LeetCode / HackerRank / StrataScratch).
+- `src/projects/` — Mini-proyectos semanales integradores.
+- `src/benchmarks/` — Comparativas de performance (Pandas/Polars/DuckDB, sync/async).
+- `tests/` — Tests con pytest + hypothesis.
+- `notes/` — Notas técnicas de investigación, una por tema.
+- `data/` — Datasets para EDAs (no versionados).
 
 ## Setup
 
@@ -18,32 +19,42 @@ Combina ejercicios algorítmicos, notas técnicas de investigación y mini-proye
 uv sync --all-extras
 \`\`\`
 
-## Ejecutar tests
+## Ejecutar
 
 \`\`\`bash
-pytest                          # todos
-pytest tests/week_01_basics     # una semana
-pytest tests/week_01_basics/test_day_01_two_sum.py -v   # un ejercicio
-pytest --cov=src                # con coverage
-\`\`\`
-
-## Lint
-
-\`\`\`bash
-ruff check .
-ruff format .
+uv run pytest                          # todos los tests
+uv run pytest tests/exercises -v       # solo ejercicios
+uv run pytest --cov=src                # con coverage
+uv run ruff check .                    # lint
+uv run ruff format .                   # formateo
 \`\`\`
 
 ## Convenciones
 
-- Un módulo por ejercicio: `src/week_NN/day_NN_slug.py`
-- Un test por módulo: `tests/week_NN/test_day_NN_slug.py`
-- Cada solución tiene docstring con: URL, dificultad, complejidad temporal/espacial, decisiones clave.
-- Type hints en todas las funciones públicas.
+- Python 3.12+, type hints estrictos (PEP 604 / 612 / 695).
+- Un módulo por ejercicio: `src/exercises/day_NN_slug.py`.
+- Un test por módulo: `tests/exercises/test_day_NN_slug.py`.
+- Cada solución incluye docstring con URL, complejidad y decisiones técnicas.
+- Conventional Commits con scope: `feat(exercises): ...`, `docs(notes): ...`, `feat(projects): ...`.
 
 ## Progreso
 
-- [ ] Semana 1 — Strings,listas,diccionarios
-- [ ] Semana 2 — Two pointers, sliding window, arrays (Medium)
-- [ ] Semana 3 — Recursión, búsqueda, ordenamiento (Medium)
-- [ ] Semana 4 - DP, Pandas/NumPy, casos DS (Hard / aplicado)
+- [ ] **Semana 1** — Python moderno: types, errors, idioms.
+- [ ] **Semana 2** — Performance, profiling, async.
+- [ ] **Semana 3** — Data stack moderno: Pandas → Polars → DuckDB.
+- [ ] **Semana 4** — Observabilidad, packaging, deploy.
+
+## Notas técnicas
+
+| # | Tema | Link |
+|---|------|------|
+| _Pendiente_ | | |
+
+## Mini-proyectos
+
+| Semana | Proyecto | Estado |
+|--------|----------|--------|
+| 1 | Refactor de ejercicios en paquete instalable | ⚪ Pendiente |
+| 2 | Async web scraper con Pydantic | ⚪ Pendiente |
+| 3 | EDA con Polars + DuckDB en marimo | ⚪ Pendiente |
+| 4 | API FastAPI dockerizada deployada | ⚪ Pendiente |
