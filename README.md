@@ -48,7 +48,7 @@ uv run ruff format .                   # formateo
 
 | # | Tema | Link |
 |---|------|------|
-| _Pendiente_ | | |
+| 01 | Type hints modernos (PEP 604/612/695) | [link](notes/01-modern-type-hints.md) |
 
 ## Mini-proyectos
 
