@@ -1,0 +1,40 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.cover
+
+# Entornos
+.venv/
+.env
+venv/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+
+# Datos locales
+data/
+*.csv
+*.parquet
+!tests/**/*.csv
